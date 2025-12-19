@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7792e4800dd804dc49c2de52f5630505 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div style="position: fixed; 
+                        top: 10px; left: 10px; width: 220px; height: auto; 
+                        background-color: white; border:2px solid grey; z-index:9999; 
+                        font-size:12px; padding: 10px; border-radius: 5px;">
+            <h4>🚑 Relief Map Legend</h4>
+            <p>🔵 Relief Center</p>
+            <p>🔴 Red Zone (Severity 8-10)</p>
+            <p>🟠 Yellow Zone (Severity 5-7)</p>
+            <p>🟢 Green Zone (Severity 1-4)</p>
+            <p>🛣️ Blue Lines: Roads</p>
+            </div>
+            
+    
+            <div class="folium-map" id="map_7792e4800dd804dc49c2de52f5630505" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7792e4800dd804dc49c2de52f5630505 = L.map(
+                "map_7792e4800dd804dc49c2de52f5630505",
+                {
+                    center: [28.6129, 77.2295],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_51dfd53c29b266bf0f349b1e111659e6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_51dfd53c29b266bf0f349b1e111659e6.addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+            var marker_b8dab4e39fea12cafd28ca8aada75201 = L.marker(
+                [28.6129, 77.2295],
+                {}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+            var icon_01a5f521b3004c1be8cb514480f465ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b8dab4e39fea12cafd28ca8aada75201.setIcon(icon_01a5f521b3004c1be8cb514480f465ff);
+        
+    
+        var popup_04897f5bee78778bdedad104b05e4c92 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_154e2628c7e50905b12b96dc36522be9 = $(`<div id="html_154e2628c7e50905b12b96dc36522be9" style="width: 100.0%; height: 100.0%;">🏥 Relief Center</div>`)[0];
+                popup_04897f5bee78778bdedad104b05e4c92.setContent(html_154e2628c7e50905b12b96dc36522be9);
+            
+        
+
+        marker_b8dab4e39fea12cafd28ca8aada75201.bindPopup(popup_04897f5bee78778bdedad104b05e4c92)
+        ;
+
+        
+    
+    
+            marker_b8dab4e39fea12cafd28ca8aada75201.bindTooltip(
+                `<div>
+                     Relief Center
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7368561bef3fafcd092c16772d5ccd09 = L.marker(
+                [28.692899999999998, 77.2295],
+                {}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+            var icon_fd51703be7389aade578cf890810a4f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7368561bef3fafcd092c16772d5ccd09.setIcon(icon_fd51703be7389aade578cf890810a4f9);
+        
+    
+        var popup_db31e43bfe14e861d638b1fea21cceef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f620754d3b8d490484d325bc9102820a = $(`<div id="html_f620754d3b8d490484d325bc9102820a" style="width: 100.0%; height: 100.0%;">📍 Delhi<br>Severity: 8/10<br>Priority: 1</div>`)[0];
+                popup_db31e43bfe14e861d638b1fea21cceef.setContent(html_f620754d3b8d490484d325bc9102820a);
+            
+        
+
+        marker_7368561bef3fafcd092c16772d5ccd09.bindPopup(popup_db31e43bfe14e861d638b1fea21cceef)
+        ;
+
+        
+    
+    
+            marker_7368561bef3fafcd092c16772d5ccd09.bindTooltip(
+                `<div>
+                     Delhi - Priority 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fcc802087e0a18b8a129ee93504e000a = L.circle(
+                [28.692899999999998, 77.2295],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2400, "stroke": true, "weight": 3}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+        var popup_629aaf1da33d8fc81b15b78a66686705 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a240eb6f8742f942cd8a015588cfd8d = $(`<div id="html_9a240eb6f8742f942cd8a015588cfd8d" style="width: 100.0%; height: 100.0%;">Delhi Zone</div>`)[0];
+                popup_629aaf1da33d8fc81b15b78a66686705.setContent(html_9a240eb6f8742f942cd8a015588cfd8d);
+            
+        
+
+        circle_fcc802087e0a18b8a129ee93504e000a.bindPopup(popup_629aaf1da33d8fc81b15b78a66686705)
+        ;
+
+        
+    
+    
+            var marker_2418910230b5aef991f5d0720dc29e09 = L.marker(
+                [28.6129, 77.2295],
+                {}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+            var icon_82bc94f366ba3397fa495dd3b3090d80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2418910230b5aef991f5d0720dc29e09.setIcon(icon_82bc94f366ba3397fa495dd3b3090d80);
+        
+    
+        var popup_6126ee36a153086af321241d5337d47f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4af62bfc6bf606639f133bd53c999895 = $(`<div id="html_4af62bfc6bf606639f133bd53c999895" style="width: 100.0%; height: 100.0%;">📍 Meerut<br>Severity: 5/10<br>Priority: 2</div>`)[0];
+                popup_6126ee36a153086af321241d5337d47f.setContent(html_4af62bfc6bf606639f133bd53c999895);
+            
+        
+
+        marker_2418910230b5aef991f5d0720dc29e09.bindPopup(popup_6126ee36a153086af321241d5337d47f)
+        ;
+
+        
+    
+    
+            marker_2418910230b5aef991f5d0720dc29e09.bindTooltip(
+                `<div>
+                     Meerut - Priority 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_05cac8320b2eba1595715373da963b3b = L.circle(
+                [28.6129, 77.2295],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1500, "stroke": true, "weight": 3}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+        var popup_9575c244393c80ed9c12df3c1508f172 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2511c0c439d24a3bfa458d0092d9696 = $(`<div id="html_d2511c0c439d24a3bfa458d0092d9696" style="width: 100.0%; height: 100.0%;">Meerut Zone</div>`)[0];
+                popup_9575c244393c80ed9c12df3c1508f172.setContent(html_d2511c0c439d24a3bfa458d0092d9696);
+            
+        
+
+        circle_05cac8320b2eba1595715373da963b3b.bindPopup(popup_9575c244393c80ed9c12df3c1508f172)
+        ;
+
+        
+    
+    
+            var poly_line_a46665292cc146cec7fe52a1ecd72580 = L.polyline(
+                [[28.6129, 77.2295], [28.692899999999998, 77.2295]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7792e4800dd804dc49c2de52f5630505);
+        
+    
+        var popup_23f4fdc9f84c5ac1331c9b3dd23a0ff5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96ecfbb4e9042d07ab13b3bd040436d4 = $(`<div id="html_96ecfbb4e9042d07ab13b3bd040436d4" style="width: 100.0%; height: 100.0%;">Road: Meerut ↔ Delhi (50.0 km)</div>`)[0];
+                popup_23f4fdc9f84c5ac1331c9b3dd23a0ff5.setContent(html_96ecfbb4e9042d07ab13b3bd040436d4);
+            
+        
+
+        poly_line_a46665292cc146cec7fe52a1ecd72580.bindPopup(popup_23f4fdc9f84c5ac1331c9b3dd23a0ff5)
+        ;
+
+        
+    
+</script>
+</html>
